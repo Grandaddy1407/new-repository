@@ -13,20 +13,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-const { PORT, } = process.env;
+const { PORT,  } = process.env;
 
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home' });
     });
 
-    app.get('/profile', (req, res) => {
-        res.render('profile', { title: 'Profile' });
-    });
-
-    app.get('/contact', (req, res) => {
-        res.render('contact', { title: 'Contact' });
-    });
+ app.get('/about', (req, res) => {
+    res.render('about', { title: 'About'})
+})
+   
+    app.get('/services', (req, res) => {
+        res.render('services', { title: 'services'})
+    })
 
     app.get('/404', (req, res) => {
         res.render('404', { title: '404 Not Found' });
